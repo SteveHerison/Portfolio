@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Fira_Code } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+//Components
+import Header from "@/components/Header";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+export const geistFira = Fira_Code({
+  variable: "--font-geist-fira",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,8 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${geistFira.variable} font-primary text-zinc-500 container mx-auto `}
       >
+        <Header />
         {children}
       </body>
     </html>
