@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`min-h-screen flex flex-col ${geistFira.variable} font-primary text-zinc-500 container mx-auto `}
+        className={`min-h-screen flex flex-col ${geistFira.variable} pb-4 font-primary text-zinc-500 container mx-auto `}
       >
         <Header />
         {children}

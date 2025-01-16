@@ -10,8 +10,9 @@ const Photo = () => {
           src={Foto}
           quality={100}
           fill
-          alt=""
+          alt="Foto Principal"
           className="object-cover rounded-full"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
     </div>
