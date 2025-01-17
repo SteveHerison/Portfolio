@@ -6,7 +6,7 @@ import { Link } from "@/components/Link";
 import Gard from "@/assets/img/De.png";
 import Image from "next/image";
 
-export const Projects = () => {
+export const ProjectsComponent = () => {
   return (
     <div className="py-16">
       <TitleSection subtitle="destaques" title="Projetos" />
@@ -20,7 +20,7 @@ export const Projects = () => {
 
         <p className="flex items-center gap-1.5">
           <span>Se interessou?</span>
-          <Link href="/" className="inline-flex">
+          <Link href="/projects" className="inline-flex">
             Ver todos
             <Image src={Gard} alt="dfd" width={40} height={34} />
           </Link>

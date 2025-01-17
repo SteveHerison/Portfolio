@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Foto from "@/assets/img/Foto.jpeg";
 
-const Photo = () => {
+export const Photo = () => {
   return (
     <div className="relative w-72 h-72">
       <div className="absolute inset-0 animate-scale">
@@ -18,5 +18,3 @@ const Photo = () => {
     </div>
   );
 };
-
-export default Photo;

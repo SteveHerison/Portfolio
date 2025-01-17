@@ -1,6 +1,6 @@
 "use client";
 
-const RedesSociais = () => {
+export const RedesSociais = () => {
   return (
     <div className="flex items-center gap-4 ">
       <div className="social-button">
@@ -111,5 +111,3 @@ const RedesSociais = () => {
     </div>
   );
 };
-
-export default RedesSociais;

@@ -34,7 +34,9 @@ export const ProjectsCards = () => {
           <p>tags</p>
           <p>tags</p>
         </div>
-        <Link href="/">Ver Projeto</Link>
+        <Link href="/" className="text-base">
+          Ver Projeto
+        </Link>
       </div>
     </div>
   );

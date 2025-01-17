@@ -9,8 +9,8 @@ type TitleProps = {
 export const TitleSection = ({ title, subtitle, className }: TitleProps) => {
   return (
     <div className={cn("flex flex-col gap-3", className)}>
-      <span className="font-semibold text-purple-950">{`../${subtitle}`}</span>
-      <h3 className="text-2xl">{title}</h3>
+      <span className="font-semibold text-purple-950 text-sm">{`../${subtitle}`}</span>
+      <h3 className="text-xl">{title}</h3>
     </div>
   );
 };

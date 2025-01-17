@@ -3,7 +3,9 @@ import "./globals.css";
 import { Fira_Code } from "next/font/google";
 
 //Components
-import Header from "@/components/Header";
+import { Header } from "@/components/Header";
+import { Form } from "@/components/FormContact";
+import { Footer } from "@/components/Footer";
 
 export const geistFira = Fira_Code({
   variable: "--font-geist-fira",
@@ -22,12 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-Br">
       <body
-        className={`min-h-screen flex flex-col ${geistFira.variable} pb-4 font-primary text-zinc-500 container mx-auto `}
+        className={`min-h-screen flex flex-col ${geistFira.variable}  font-primary text-zinc-500  `}
       >
         <Header />
         {children}
+        <Form />
+        <Footer />
       </body>
     </html>
   );

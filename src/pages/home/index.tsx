@@ -1,6 +1,6 @@
 "use client";
-import Photo from "@/components/Photo";
-import RedesSociais from "@/components/RedesSociais";
+import { Photo } from "@/components/Photo";
+import { RedesSociais } from "@/components/RedesSociais";
 
 const Home = () => {
   return (

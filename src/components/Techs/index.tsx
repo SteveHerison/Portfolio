@@ -21,5 +21,3 @@ export const TechCards = ({ tech }: TechsProps) => {
     </div>
   );
 };
-
-export default TechCards;
