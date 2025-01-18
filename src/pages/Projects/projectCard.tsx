@@ -1,13 +1,13 @@
 import Image from "next/image";
-
+import Gard from "../../../public/assets/img/k.webp";
 const ProjectCard = () => {
   return (
-    <div className="rounded-xl h-[436px] flex flex-col overflow-y-hidden border-2 hover:border-purple-950 opacity-60 hover:opacity-100 transition-all group">
+    <div className="rounded-xl h-[436px] flex flex-col overflow-y-hidden border-2 hover:border-purple-950 opacity-70 hover:opacity-100 transition-all group">
       <div className="w-full h-48 overflow-hidden">
         <Image
           width={380}
           height={200}
-          src="f"
+          src={Gard}
           alt="f"
           unoptimized
           className="group-hover:scale-110 transition-all object-cover w-full h-full duration-500"

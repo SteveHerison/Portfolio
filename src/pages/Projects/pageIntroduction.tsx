@@ -1,5 +1,6 @@
 import { Link } from "@/components/Link";
 import { TitleSection } from "@/components/Title/title";
+import { ArrowBigLeftDash } from "lucide-react";
 
 const PageIntroduction = () => {
   return (
@@ -17,7 +18,13 @@ const PageIntroduction = () => {
           ut? Distinctio ad quisquam labore repudiandae. Dolor in illo excepturi
           ad!
         </p>
-        <Link href="/">voltar para home</Link>
+        <Link
+          href="/"
+          className="hover:text-purple-600 transition-colors flex items-center"
+        >
+          <ArrowBigLeftDash />
+          voltar para home
+        </Link>
       </div>
     </section>
   );

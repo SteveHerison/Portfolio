@@ -1,8 +1,8 @@
-import React from "react";
 import Image from "next/image";
 
-import Gard from "../../../../public/assets/img/De.png";
+import Gard from "../../../../public/assets/img/k.webp";
 import { Link } from "@/components/Link";
+import { ArrowBigRightDash } from "lucide-react";
 
 export const ProjectsCards = () => {
   return (
@@ -17,7 +17,7 @@ export const ProjectsCards = () => {
         />
       </div>
       <div className="flex lg:items-center gap-3  text-xl flex-col items-start">
-        <h3>
+        <h3 className="flex flex-col items-center text-base md:text-xl">
           <Image src={Gard} alt="dfd" width={40} height={34} /> title
         </h3>
         <p className="text-sm">
@@ -25,7 +25,7 @@ export const ProjectsCards = () => {
           deleniti repellat aperiam numquam voluptatum optio cupiditate autem
           non assumenda.
         </p>
-        <div className="flex space-x-2 gap-y-3 flex-wrap mb-8 md:max-w-96">
+        <div className="flex space-x-2 gap-y-3 flex-wrap mb-8 md:max-w-96 text-sm">
           <p>tags</p>
           <p>tags</p>
           <p>tags</p>
@@ -34,8 +34,12 @@ export const ProjectsCards = () => {
           <p>tags</p>
           <p>tags</p>
         </div>
-        <Link href="/" className="text-base">
+        <Link
+          href="/"
+          className="text-base flex items-center hover:text-purple-950 transition-colors"
+        >
           Ver Projeto
+          <ArrowBigRightDash />
         </Link>
       </div>
     </div>

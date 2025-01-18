@@ -19,15 +19,15 @@ export const Header = () => {
         <Link href="/">
           <h1 className="md:text-xl text-sm flex items-center">
             HerisonTech
-            <span className="text-purple-950 text-2xl ">.</span>
+            <span className="text-purple-950 text-2xl">.</span>
           </h1>
         </Link>
-        <nav className="flex items-center gap-3 sm:gap-10 text-xs sm:text-base">
+        <nav className="flex items-center gap-3 sm:gap-10 text-xs sm:text-base ">
           {NavLinks.map((item) => (
             <Nav {...item} key={item.label} />
           ))}
           <a href="/contact">
-            <button className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950 hover:scale-105 duration-500 hover:ring-1 ring-zinc-100 text-xs sm:text-sm md:text-base">
+            <button className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950  hover:scale-105 duration-500 hover:ring-1 ring-zinc-100 text-xs sm:text-sm md:text-base">
               Here me
             </button>
           </a>

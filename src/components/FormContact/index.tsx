@@ -37,18 +37,18 @@ export const Form = () => {
         >
           <input
             type="text"
-            placeholder=""
+            placeholder="Name"
             className="w-full p-2 rounded-xl outline-none focus:ring-2 ring-purple-950"
             {...register("name")}
           />
           <input
             type="email"
-            placeholder=""
+            placeholder="Email"
             className="w-full p-2 rounded-xl outline-none focus:ring-2 ring-purple-950"
             {...register("email")}
           />
           <textarea
-            placeholder=""
+            placeholder="Message"
             className="w-full p-2 min-h-32 max-h-52 resize-none rounded-xl outline-none focus:ring-2 ring-purple-950"
             maxLength={500}
             {...register("message")}

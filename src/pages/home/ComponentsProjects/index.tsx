@@ -3,8 +3,8 @@ import { ProjectsCards } from "./projectSection";
 import { TitleSection } from "@/components/Title/title";
 import { Horizontal } from "@/components/divider/Horizontal";
 import { Link } from "@/components/Link";
-import Gard from "../../../../public/assets/img/De.png";
-import Image from "next/image";
+
+import { ArrowBigRightDash } from "lucide-react";
 
 export const ProjectsComponent = () => {
   return (
@@ -20,9 +20,12 @@ export const ProjectsComponent = () => {
 
         <p className="flex items-center gap-1.5">
           <span>Se interessou?</span>
-          <Link href="/projects" className="inline-flex">
+          <Link
+            href="/projects"
+            className="inline-flex hover:text-purple-950 transition-colors"
+          >
             Ver todos
-            <Image src={Gard} alt="dfd" width={40} height={34} />
+            <ArrowBigRightDash />
           </Link>
         </p>
       </div>

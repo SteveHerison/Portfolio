@@ -1,5 +1,6 @@
 import { TitleSection } from "@/components/Title/title";
 import { Button } from "@/components/ui/button";
+import { ArrowBigLeftDash } from "lucide-react";
 import Link from "next/link";
 
 const ProjectDetails = () => {
@@ -44,8 +45,11 @@ const ProjectDetails = () => {
         </a>
       </div>
 
-      <Link href="/projects" className="text-sm">
-        Voltar para projetos
+      <Link
+        href="/projects"
+        className="text-sm flex items-center hover:text-purple-600 transition-colors"
+      >
+        <ArrowBigLeftDash /> Voltar para projetos
       </Link>
     </div>
   );
