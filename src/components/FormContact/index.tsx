@@ -24,7 +24,7 @@ export const Form = () => {
   };
 
   return (
-    <section className="py-16 px-6 md:py-32 flex items-center justify-center bg-zinc-200">
+    <section className="py-16 px-6 md:py-32 flex items-center justify-center bg-zinc-200 text-zinc-500">
       <div className="w-full max-w-96 mx-auto">
         <TitleSection
           subtitle="contato"
@@ -49,7 +49,7 @@ export const Form = () => {
           />
           <textarea
             placeholder=""
-            className="w-full p-2 max-h-36 resize-none rounded-xl outline-none focus:ring-2 ring-purple-950"
+            className="w-full p-2 min-h-32 max-h-52 resize-none rounded-xl outline-none focus:ring-2 ring-purple-950"
             maxLength={500}
             {...register("message")}
           />

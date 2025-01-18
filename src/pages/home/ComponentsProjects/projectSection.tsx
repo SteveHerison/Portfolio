@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import Gard from "@/assets/img/De.png";
+import Gard from "../../../../public/assets/img/De.png";
 import { Link } from "@/components/Link";
 
 export const ProjectsCards = () => {

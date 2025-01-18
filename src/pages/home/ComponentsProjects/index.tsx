@@ -3,12 +3,12 @@ import { ProjectsCards } from "./projectSection";
 import { TitleSection } from "@/components/Title/title";
 import { Horizontal } from "@/components/divider/Horizontal";
 import { Link } from "@/components/Link";
-import Gard from "@/assets/img/De.png";
+import Gard from "../../../../public/assets/img/De.png";
 import Image from "next/image";
 
 export const ProjectsComponent = () => {
   return (
-    <div className="py-16">
+    <div className="py-16 containers text-zinc-500">
       <TitleSection subtitle="destaques" title="Projetos" />
       <Horizontal className="mb-16" />
 

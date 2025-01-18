@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Foto from "@/assets/img/Foto.jpeg";
+import Foto from "../../public/assets/img/Foto.jpeg";
 
 export const Photo = () => {
   return (

@@ -3,11 +3,11 @@ import { TitleSection } from "@/components/Title/title";
 
 const PageIntroduction = () => {
   return (
-    <section className="w-full h-[460px] lg:h-[630px] flex flex-col items-center justify-center">
+    <section className="w-full h-[560px] lg:h-[700px] flex flex-col items-center justify-center bg-heroImage bg-no-repeat bg-cover bg-right-bottom">
       <TitleSection
         subtitle="projetos"
         title="Projetos"
-        className="text-center [&>h3]:text-4xl"
+        className="text-center [&>h3]:text-4xl [&>h3]:font-semibold [&>span]:bg-clip-text [&>span]:text-transparent [&>span]:bg-gradient-to-r from-purple-400 to-purple-950"
       />
       <div className="flex flex-col items-center">
         <p className="text-center my-6 text-sm sm:text-base max-w-[640px]">

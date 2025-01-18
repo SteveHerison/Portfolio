@@ -16,7 +16,10 @@ export const Nav = ({ label, href }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={cn(isActive && "text-purple-950", "hover:text-purple-800")}
+      className={cn(
+        isActive && "text-purple-700 transition-all font-semibold ",
+        "hover:text-purple-700 transition-all hover:font-semibold"
+      )}
     >
       <span>_</span>
       {label}

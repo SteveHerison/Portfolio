@@ -6,7 +6,7 @@
   font-family: var(--font-geist-fira);
 }
 
-.container {
+.containers {
   @apply mx-auto w-full max-w-[1200px] px-6;
 }
 
@@ -15,11 +15,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #374151;
+  background: #f1f1f175;
   border-radius: 5px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #10b981;
+  background-color: #c0c0c0;
   border-radius: 14px;
 }
 

@@ -3,7 +3,7 @@ import ExperienceItem from "./experienceItem";
 
 const Experience = () => {
   return (
-    <section className="py-16 flex gap-10 md:gap-4 lg:gap-16 md:flex-row flex-col">
+    <section className="py-16 flex gap-10 md:gap-4 lg:gap-16 md:flex-row flex-col containers text-zinc-500">
       <div className="max-w-96  space-y-6">
         <TitleSection subtitle="experiencias" title="Experiência Prof" />
         <p>

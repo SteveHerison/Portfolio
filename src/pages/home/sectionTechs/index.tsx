@@ -260,9 +260,9 @@ export const Techs = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16 containers">
       <TitleSection title="Conhecimentos" subtitle="competências" />
-      <div className="grid gridCols-[repeat(auto-fit,minmax(264px,1fr))] gap-2 mt-14">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-2 mt-14">
         {technologies.map((tech, index) => (
           <TechCards key={index} tech={tech} />
         ))}

@@ -1,9 +1,9 @@
-import PageIntroduction from "@/pages/Projects/pageIntroduction";
+import ProjectsContext from "@/pages/Projects";
 
 export default function Projects() {
   return (
-    <section className="container mx-auto">
-      <PageIntroduction />
+    <section className="">
+      <ProjectsContext />
     </section>
   );
 }

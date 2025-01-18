@@ -4,13 +4,13 @@ import { RedesSociais } from "@/components/RedesSociais";
 
 const Home = () => {
   return (
-    <main className="w-full py-16 flex-1 min-h-[700px] flex items-center justify-center  md:gap-20">
-      <section className="flex items-start justify-between flex-col-reverse lg:flex-row  w-full gap-10">
+    <main className=" w-full py-16 flex-1 min-h-[700px] flex items-center justify-center md:gap-20 bg-heroImage bg-no-repeat bg-cover bg-right-bottom">
+      <section className="relative flex py-16 items-start justify-between flex-col-reverse lg:flex-row gap-10 containers">
         <div className="flex items-center flex-col md:items-start space-y-4">
           <h2>Software Developer</h2>
           <p className="flex flex-col items-center text-3xl md:items-start xl:text-5xl sm:text-4xl">
             {`Hello I'm`} <br />
-            <span className="font-semibold text-purple-950">Steve Herison</span>
+            <span className="font-semibold text-zinc-100">Steve Herison</span>
           </p>
           <p className="text-center md:text-start text-sm">
             Desenvolvedor em constante busca de desafios, entusiasta para ajudar
@@ -23,7 +23,7 @@ const Home = () => {
               target="_blank"
               href="https://drive.google.com/file/d/1kPJwsO4D2g40OusKT3xIhcPvas8_1sC6/view"
             >
-              <button className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
+              <button className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950 hover:scale-105 duration-500 hover:ring-1 ring-zinc-100 font-mono w-[150px]">
                 <p>DOWNLOAD CV</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -14,21 +14,23 @@ const NavLinks = [
 
 export const Header = () => {
   return (
-    <header className="w-full h-20 md:h-24 flex items-center container mx-auto">
-      <div className=" flex justify-between w-full">
-        {/* Logo */}
+    <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
+      <div className=" flex justify-between items-center containers">
         <Link href="/">
-          <h1 className="">
-            HerisonTech<span className="text-purple-950 text-2xl">.</span>
+          <h1 className="md:text-xl text-sm flex items-center">
+            HerisonTech
+            <span className="text-purple-950 text-2xl ">.</span>
           </h1>
         </Link>
-        <nav className="flex items-center space-x-2 md:space-x-4 text-xs sm:text-sm md:text-base ">
+        <nav className="flex items-center gap-3 sm:gap-10 text-xs sm:text-base">
           {NavLinks.map((item) => (
             <Nav {...item} key={item.label} />
           ))}
-          <button className=" bg-black/1 p-1 rounded-full bg-zinc-200 hover:shadow-xl hover:bg-purple-950 hover:text-white transition-all">
-            Hire me
-          </button>
+          <a href="/contact">
+            <button className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950 hover:scale-105 duration-500 hover:ring-1 ring-zinc-100 text-xs sm:text-sm md:text-base">
+              Here me
+            </button>
+          </a>
         </nav>
       </div>
     </header>

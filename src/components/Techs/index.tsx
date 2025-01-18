@@ -12,9 +12,11 @@ type TechsProps = {
 export const TechCards = ({ tech }: TechsProps) => {
   const relativeTime = getRelativeTimeString(new Date(tech.startData), "pt-BR");
   return (
-    <div className="p-6 rounded-xl bg-zinc-200 shadow-md flex flex-col">
+    <div className="p-6 rounded-xl bg-zinc-200 text-zinc-500 shadow-md flex flex-col">
       <div className="flex items-center justify-between">
-        <p className="font-semibold">{tech.name}</p>
+        <p className="font-semibold hover:text-purple-950 transition-colors">
+          {tech.name}
+        </p>
         <div className="w-7 h-7">{tech.icon}</div>
       </div>
       <span>{relativeTime}</span>

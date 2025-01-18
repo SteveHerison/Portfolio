@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        heroImage: "url('/assets/img/hero.png')",
+      },
       keyframes: {
         scale: {
           "0%": { transform: "scale(0.3)" },
