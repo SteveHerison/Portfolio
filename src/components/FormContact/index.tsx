@@ -38,22 +38,22 @@ export const Form = () => {
           <input
             type="text"
             placeholder="Name"
-            className="w-full p-2 rounded-xl outline-none focus:ring-2 ring-purple-950"
+            className="w-full p-2 rounded-xl outline-none focus:ring-2 ring-purple-950 transition-all"
             {...register("name")}
           />
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-2 rounded-xl outline-none focus:ring-2 ring-purple-950"
+            className="w-full p-2 rounded-xl outline-none focus:ring-2 ring-purple-950 transition-all"
             {...register("email")}
           />
           <textarea
             placeholder="Message"
-            className="w-full p-2 min-h-32 max-h-52 resize-none rounded-xl outline-none focus:ring-2 ring-purple-950"
+            className="w-full p-2 min-h-32 max-h-52 resize-none rounded-xl outline-none focus:ring-2 ring-purple-950 transition-all"
             maxLength={500}
             {...register("message")}
           />
-          <Button className="shadow-xl font-primary bg-purple-950 shadow-purple-950/80">
+          <Button className="shadow-xl font-primary bg-purple-950 shadow-purple-950/80 transition-all hover:shadow-zinc-800">
             Enviar
           </Button>
         </form>
