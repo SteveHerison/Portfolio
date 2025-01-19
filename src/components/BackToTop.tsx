@@ -31,7 +31,7 @@ const BackToTop = () => {
       {show && (
         <button
           onClick={scrollToTop}
-          className="shadow-lg shadow-purple-950 p-2 bg-purple-950 rounded-xl"
+          className="shadow-lg shadow-purple-950 p-2 bg-gradient-to-r from-purple-950 to-black rounded-xl"
         >
           <ArrowUpWideNarrow size={20} />
         </button>

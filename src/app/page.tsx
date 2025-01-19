@@ -12,7 +12,7 @@ const getPageData = async (): Promise<HomePageData> => {
     introduction {
       raw
     }
-    technologies {
+    technologies {   # Esse campo está correto para 'Page'
       name
     }
     profilePicture {
@@ -27,22 +27,39 @@ const getPageData = async (): Promise<HomePageData> => {
       name
       startDate
     }
+    highlightProjects {
+      slug
+      thumbnail {
+        url
+      }
+      title
+      shortDescription
+      technology { 
+        name
+      }
+    }
   }
 }
-
-
 `;
   return fetchHygrapQuery(query, 60 * 60 * 24);
 };
 
 export default async function Page() {
-  const { page: pageData } = await getPageData();
+  const data = await getPageData();
+
+  // Verifica se data.page existe antes de tentar desestruturar
+  if (!data?.page) {
+    // Caso o retorno seja nulo ou sem dados, trata o erro ou retorna uma resposta alternativa
+    return <div>Erro ao carregar os dados da página.</div>;
+  }
+
+  const { page: pageData } = data;
 
   return (
     <>
       <Home homeInfo={pageData} />
       <Techs techs={pageData.knownTechsh} />
-      <ProjectsComponent />
+      <ProjectsComponent projects={pageData.highlightProjects} />
       <Experience />
     </>
   );
