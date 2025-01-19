@@ -24,7 +24,10 @@ export const Form = () => {
   };
 
   return (
-    <section className="py-16 px-6 md:py-32 flex items-center justify-center bg-zinc-200 text-zinc-500">
+    <section
+      id="contact"
+      className="py-16 px-6 md:py-32 flex items-center justify-center bg-zinc-200 text-zinc-500"
+    >
       <div className="w-full max-w-96 mx-auto">
         <TitleSection
           subtitle="contato"

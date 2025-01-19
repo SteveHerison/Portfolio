@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Nav } from "./Nav";
 
@@ -13,6 +14,12 @@ const NavLinks = [
 ];
 
 export const Header = () => {
+  const handleContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
       <div className=" flex justify-between items-center containers">
@@ -26,11 +33,13 @@ export const Header = () => {
           {NavLinks.map((item) => (
             <Nav {...item} key={item.label} />
           ))}
-          <a href="/contact">
-            <button className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950  hover:scale-105 duration-500 hover:ring-1 ring-zinc-100 text-xs sm:text-sm md:text-base">
-              Here me
-            </button>
-          </a>
+
+          <button
+            onClick={handleContact}
+            className="cursor-pointer flex justify-between bg-zinc-500/10 px-2 py-2 rounded-full hover:text-white tracking-wider shadow-xl hover:bg-purple-950  hover:scale-105 duration-500 hover:ring-1 ring-zinc-100 text-xs sm:text-sm md:text-base"
+          >
+            Hire me
+          </button>
         </nav>
       </div>
     </header>
