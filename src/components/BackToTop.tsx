@@ -1,6 +1,5 @@
 "use client";
 import { ArrowUpWideNarrow } from "lucide-react";
-import { Button } from "./ui/button";
 import { useCallback, useEffect, useState } from "react";
 
 const BackToTop = () => {
@@ -11,8 +10,15 @@ const BackToTop = () => {
   };
 
   const handleScroll = useCallback(() => {
-    if (!show && window.scrollY > 500) setShow(true);
-    if (show && window.scrollY >= 500) setShow(false);
+    // Mostrar o botão quando o scroll for maior que 500px
+    if (window.scrollY > 500 && !show) {
+      setShow(true);
+    }
+
+    // Esconder o botão quando o scroll for menor ou igual a 500px
+    if (window.scrollY <= 500 && show) {
+      setShow(false);
+    }
   }, [show]);
 
   useEffect(() => {
@@ -21,13 +27,13 @@ const BackToTop = () => {
   }, [handleScroll]);
 
   return (
-    <div className="fixed bottom-3 right-4 z-20">
+    <div className="fixed bottom-10 right-4 z-40">
       {show && (
         <button
           onClick={scrollToTop}
           className="shadow-lg shadow-purple-950 p-2 bg-purple-950 rounded-xl"
         >
-          <ArrowUpWideNarrow size={20} />{" "}
+          <ArrowUpWideNarrow size={20} />
         </button>
       )}
     </div>

@@ -1,8 +1,13 @@
 "use client";
 import { Photo } from "@/components/Photo";
 import { RedesSociais } from "@/components/RedesSociais";
+import { RicheText } from "@/components/RichText";
+import { HomePageInfo } from "@/types/pageInfo";
 
-const Home = () => {
+type HomeSectionProps = {
+  homeInfo: HomePageInfo;
+};
+const Home = ({ homeInfo }: HomeSectionProps) => {
   return (
     <main className=" w-full py-16 flex-1 min-h-[700px] flex items-center justify-center md:gap-20 bg-heroImage bg-no-repeat bg-cover bg-right-bottom">
       <section className="relative flex py-16 items-start justify-between flex-col-reverse lg:flex-row gap-10 containers">
@@ -10,13 +15,13 @@ const Home = () => {
           <h2>Software Developer</h2>
           <p className="flex flex-col items-center text-3xl md:items-start xl:text-5xl sm:text-4xl">
             {`Hello I'm`} <br />
-            <span className="font-semibold text-zinc-100">Steve Herison</span>
+            <span className="font-semibold text-zinc-50 md:text-purple-900">
+              Steve Herison
+            </span>
           </p>
-          <p className="text-center md:text-start text-sm">
-            Desenvolvedor em constante busca de desafios, entusiasta para ajudar
-            na próxima solução de que precisa. Transformo ideias em resultados
-            com foco, criatividade e impacto.
-          </p>
+          <div className="text-center md:text-start text-sm">
+            <RicheText content={homeInfo.introduction.raw} />
+          </div>
 
           <div className="flex flex-col md:flex-row w-full justify-between items-center space-y-4">
             <a
@@ -47,7 +52,7 @@ const Home = () => {
         </div>
 
         <div className="w-full h-full flex lg:justify-end justify-center ">
-          <Photo />
+          <Photo homeInfo={homeInfo} />
         </div>
       </section>
     </main>

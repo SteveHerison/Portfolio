@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        heroImage: "url('/assets/img/hero.png')",
+        heroImage: "url('/assets/img/Backhero.png')",
       },
       keyframes: {
         scale: {

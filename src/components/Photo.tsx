@@ -1,13 +1,17 @@
 "use client";
+import { HomePageInfo } from "@/types/pageInfo";
 import Image from "next/image";
-import Foto from "../../public/assets/img/Foto.jpeg";
 
-export const Photo = () => {
+type HomeSectionProps = {
+  homeInfo: HomePageInfo;
+};
+
+export const Photo = ({ homeInfo }: HomeSectionProps) => {
   return (
     <div className="relative w-72 h-72">
       <div className="absolute inset-0 animate-scale">
         <Image
-          src={Foto}
+          src={homeInfo.profilePicture.url}
           quality={100}
           fill
           alt="Foto Principal"
