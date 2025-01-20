@@ -39,28 +39,36 @@ const getPageData = async (): Promise<HomePageData> => {
       }
     }
   }
+     workExperiences {
+        companyLogo {
+          url
+        }
+        role
+        companyName
+        companyUrl
+        startDate
+        endDate
+        description {
+          raw
+        }
+        technology {
+          name
+        }
+      }
 }
 `;
   return fetchHygrapQuery(query, 60 * 60 * 24);
 };
 
 export default async function Page() {
-  const data = await getPageData();
-
-  // Verifica se data.page existe antes de tentar desestruturar
-  if (!data?.page) {
-    // Caso o retorno seja nulo ou sem dados, trata o erro ou retorna uma resposta alternativa
-    return <div>Erro ao carregar os dados da página.</div>;
-  }
-
-  const { page: pageData } = data;
+  const { page: pageData, workExperiences } = await getPageData();
 
   return (
     <>
       <Home homeInfo={pageData} />
       <Techs techs={pageData.knownTechsh} />
       <ProjectsComponent projects={pageData.highlightProjects} />
-      <Experience />
+      <Experience experiences={workExperiences} />
     </>
   );
 }

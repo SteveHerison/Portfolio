@@ -1,7 +1,12 @@
 import { TitleSection } from "@/components/Title/title";
 import ExperienceItem from "./experienceItem";
+import { WorkExperience } from "@/types/workExperiences";
 
-const Experience = () => {
+type WorkexperienceProps = {
+  experiences: WorkExperience[];
+};
+
+const Experience = ({ experiences }: WorkexperienceProps) => {
   return (
     <section className="py-16 flex gap-10 md:gap-4 lg:gap-16 md:flex-row flex-col containers text-zinc-500">
       <div className="max-w-96  space-y-6">
@@ -13,8 +18,12 @@ const Experience = () => {
         </p>
       </div>
       <div className="flex flex-col gap-4">
-        <ExperienceItem />
-        <ExperienceItem />
+        {experiences.map((experience) => (
+          <ExperienceItem
+            key={experience.companyName}
+            experience={experience}
+          />
+        ))}
       </div>
     </section>
   );

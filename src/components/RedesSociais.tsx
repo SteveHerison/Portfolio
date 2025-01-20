@@ -82,7 +82,7 @@ export const RedesSociais = () => {
           </div>
         </button>
       </div>
-      <div className="social-button">
+      {/* <div className="social-button">
         <button className="relative w-8 h-8 rounded-full group">
           <a href="http://" target="_blank" rel="noopener noreferrer"></a>
           <div className="floater w-full h-full absolute top-0 left-0 bg-zinc-200 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"></div>
@@ -107,7 +107,7 @@ export const RedesSociais = () => {
             </a>
           </div>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

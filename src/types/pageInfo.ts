@@ -1,3 +1,4 @@
+import { WorkExperience } from "./workExperiences";
 import type { RichTextContent } from "@graphcms/rich-text-types";
 import { KnowTech, Project } from "./projects";
 
@@ -20,4 +21,5 @@ export type HomePageInfo = {
 
 export type HomePageData = {
   page: HomePageInfo;
+  workExperiences: WorkExperience[];
 };
