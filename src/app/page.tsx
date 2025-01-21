@@ -66,7 +66,7 @@ export default async function Page() {
   return (
     <>
       <Home homeInfo={pageData} />
-      <Techs techs={pageData.knownTechsh} />
+      <Techs techs={pageData.knownTech} />
       <ProjectsComponent projects={pageData.highlightProjects} />
       <Experience experiences={workExperiences} />
     </>
