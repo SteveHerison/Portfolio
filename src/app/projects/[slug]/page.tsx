@@ -5,7 +5,7 @@ import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-type ProjectProps = {
+type ProjectsProps = {
   params: {
     slug: string;
   };
@@ -49,7 +49,7 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   return data;
 };
 
-export default async function Project({ params }: ProjectProps) {
+export default async function Project({ params }: ProjectsProps) {
   const { slug } = params; // Access params directly without awaiting
 
   const projectData = await getProjectDetails(slug);
@@ -90,7 +90,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params: { slug },
-}: ProjectProps): Promise<Metadata> {
+}: ProjectsProps): Promise<Metadata> {
   const data = await getProjectDetails(slug);
   const project = data.project;
 

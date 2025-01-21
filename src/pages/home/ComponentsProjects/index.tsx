@@ -10,7 +10,7 @@ type highlightProjectsProps = {
   projects: Project[];
 };
 
-export const ProjectsComponent = ({ projects }: highlightProjectsProps) => {
+const ProjectsComponent = ({ projects }: highlightProjectsProps) => {
   return (
     <div className="py-16 containers text-zinc-500">
       <TitleSection subtitle="destaques" title="Projetos" />
@@ -38,3 +38,4 @@ export const ProjectsComponent = ({ projects }: highlightProjectsProps) => {
     </div>
   );
 };
+export default ProjectsComponent;

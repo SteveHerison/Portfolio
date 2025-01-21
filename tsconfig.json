@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true, // Permite usar arquivos .js junto com .ts/tsx
     "skipLibCheck": true, // Ignora a checagem de tipos nas bibliotecas para acelerar a compilação
     "strict": true, // Habilita a verificação estrita de tipos, essencial para garantir a consistência do código
@@ -18,8 +22,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"] // Configura um alias para facilitar a importação dos arquivos da pasta src
-    }
+      "@/*": [
+        "./src/*"
+      ] // Configura um alias para facilitar a importação dos arquivos da pasta src
+    },
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
@@ -28,5 +35,7 @@
     ".next/types/**/*.ts", // Inclui as definições de tipos da pasta .next
     "src/components/Title/title.tsx" // Inclui explicitamente o arquivo Title.tsx para ser verificado
   ],
-  "exclude": ["node_modules"] // Exclui a pasta node_modules da verificação
+  "exclude": [
+    "node_modules"
+  ] // Exclui a pasta node_modules da verificação
 }
