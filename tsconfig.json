@@ -2,32 +2,31 @@
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true, // Ignora a checagem de tipos nas bibliotecas
-    "strict": true, // Habilita a verificação estrita de tipos
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node", // Muda para node para resolução de módulos compatível com Next.js
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "allowJs": true, // Permite usar arquivos .js junto com .ts/tsx
+    "skipLibCheck": true, // Ignora a checagem de tipos nas bibliotecas para acelerar a compilação
+    "strict": true, // Habilita a verificação estrita de tipos, essencial para garantir a consistência do código
+    "noEmit": true, // Não gera arquivos de saída (útil quando estamos apenas verificando os tipos)
+    "esModuleInterop": true, // Permite importar módulos CommonJS
+    "module": "esnext", // Usa módulos ES6, que é o mais compatível com o Next.js
+    "moduleResolution": "node", // Define o padrão de resolução de módulos como Node
+    "resolveJsonModule": true, // Permite importar arquivos .json
+    "jsx": "preserve", // Mantém o código JSX para ser compilado pelo Next.js
+    "incremental": true, // Habilita a compilação incremental, acelerando o processo de build
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // Configura um alias para facilitar a importação dos arquivos da pasta src
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/components/Title/title.tsx"
+    ".next/types/**/*.ts", // Inclui as definições de tipos da pasta .next
+    "src/components/Title/title.tsx" // Inclui explicitamente o arquivo Title.tsx para ser verificado
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"] // Exclui a pasta node_modules da verificação
 }
