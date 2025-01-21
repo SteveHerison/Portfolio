@@ -1,9 +1,13 @@
-import Home from "@/pages/home";
+import Homes from "@/pages/home";
 import { ProjectsComponent } from "@/pages/home/componentsProjects";
 import { Techs } from "@/pages/home/sectionTechs";
 import Experience from "@/pages/home/Work";
 import { HomePageData } from "@/types/pageInfo";
 import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery";
+
+export const metadata = {
+  title: "Home",
+};
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -57,15 +61,18 @@ const getPageData = async (): Promise<HomePageData> => {
       }
 }
 `;
-  return fetchHygrapQuery(query, 60 * 60 * 24);
+  return fetchHygrapQuery(
+    query,
+    1000 * 60 * 60 * 24 // 1 day
+  );
 };
 
-export default async function Page() {
+export default async function page() {
   const { page: pageData, workExperiences } = await getPageData();
 
   return (
     <>
-      <Home homeInfo={pageData} />
+      <Homes homeInfo={pageData} />
       <Techs techs={pageData.knownTech} />
       <ProjectsComponent projects={pageData.highlightProjects} />
       <Experience experiences={workExperiences} />

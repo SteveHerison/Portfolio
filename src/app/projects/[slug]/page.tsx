@@ -1,9 +1,7 @@
 import ProjectDatails from "@/pages/Projects/projectDatals";
 import { ProjectSection } from "@/pages/Projects/projectDatals/projectSection";
-
 import { ProjectPageData, ProjectsPageStaticData } from "@/types/pageInfo";
-import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery"; // Corrigido aqui
-
+import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -44,27 +42,27 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
       }
     }
   `;
-  // Certifique-se de que está chamando o nome correto da função
-  const data = fetchHygrapQuery<ProjectPageData>(
+  const data = await fetchHygrapQuery<ProjectPageData>(
     query,
-    1000 * 60 * 60 * 24 // 1 dia
-  );
-
+    1000 * 60 * 60 * 24
+  ); // 1 day
   return data;
 };
 
-// Restante do código continua o mesmo
+export default async function Project({ params }: ProjectProps) {
+  const { slug } = params; // Access params directly without awaiting
 
-// Componente da página do projeto
-export default async function Project({ params: { slug } }: ProjectProps) {
-  const { project } = await getProjectDetails(slug);
+  const projectData = await getProjectDetails(slug);
 
-  if (!project?.title) return notFound();
+  if (!projectData) {
+    return notFound(); // Return a "not found" page if the data doesn't exist
+  }
 
   return (
     <>
-      <ProjectDatails project={project} />
-      <ProjectSection sections={project.sections} />
+      <ProjectDatails projectData={projectData.project} />
+      <ProjectSection sections={projectData.project.sections} />{" "}
+      {/* Pass only sections here */}
     </>
   );
 }
@@ -72,14 +70,21 @@ export default async function Project({ params: { slug } }: ProjectProps) {
 // Gerar os parâmetros estáticos para as páginas
 export async function generateStaticParams() {
   const query = `
-    query ProjectsSlugsQuery() {
+    query ProjectsSlugsQuery {
       projects(first: 100) {
         slug
       }
     }
   `;
-  const { projects } = await fetchHygrapQuery<ProjectsPageStaticData>(query);
 
+  const data = await fetchHygrapQuery<ProjectsPageStaticData>(query);
+
+  if (!data || !data.projects) {
+    console.error("No projects found in the response:", data);
+    return [];
+  }
+
+  const { projects } = data;
   return projects;
 }
 

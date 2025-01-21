@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Gard from "@/app/public//finance.svg";
+// import finance from "@/app/finance.svg";
 import { Link } from "@/components/Link";
 import { ArrowBigRightDash } from "lucide-react";
 import { Project } from "@/types/projects";
@@ -43,7 +43,8 @@ export const ProjectsCards = ({ project }: ProjectsCardsProps) => {
           {...fadeUpAnimation}
           transition={{ duration: 0.7 }}
         >
-          <Image src={Gard} alt="Logo" width={20} height={20} /> {project.title}
+          {/* <Image src={finance} alt="Logo" width={20} height={20} fill />{" "} */}
+          {project.title}
         </motion.h3>
 
         <motion.p

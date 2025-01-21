@@ -1,3 +1,4 @@
+// src/utils/fetchHygrapQuery.ts
 export const fetchHygrapQuery = async <T>(
   query: string,
   revalidate?: number
