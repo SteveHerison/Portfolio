@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Gard from "/commerce-business-and-finance-svgrepo-com.svg";
+import Gard from "@/app/public//finance.svg";
 import { Link } from "@/components/Link";
 import { ArrowBigRightDash } from "lucide-react";
 import { Project } from "@/types/projects";

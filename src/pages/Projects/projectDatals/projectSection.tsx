@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ProjectSection as ProjectSections } from "@/types/projects";
+import { ProjectSection as ProjectSectionds } from "@/types/projects";
 import { fadeUpAnimation } from "@/lib/animations";
 
 type ProjectSectionsProps = {
-  sections: ProjectSections[];
+  sections: ProjectSectionds[];
 };
 
-const ProjectSection = ({ sections }: ProjectSectionsProps) => {
+export const ProjectSection = ({ sections }: ProjectSectionsProps) => {
   return (
     <section className="containers my-12 md:my32 flex flex-col gap-8 md:gap-32 text-zinc-500">
       {sections.map((section) => (
@@ -32,5 +32,3 @@ const ProjectSection = ({ sections }: ProjectSectionsProps) => {
     </section>
   );
 };
-
-export default ProjectSection;

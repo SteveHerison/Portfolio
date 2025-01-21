@@ -1,5 +1,6 @@
 import ProjectDatails from "@/pages/Projects/projectDatals";
-import ProjectSection from "@/pages/Projects/projectDatals/projectSection";
+import { ProjectSection } from "@/pages/Projects/projectDatals/projectSection";
+
 import { ProjectPageData, ProjectsPageStaticData } from "@/types/pageInfo";
 import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery"; // Corrigido aqui
 
