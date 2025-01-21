@@ -1,7 +1,7 @@
 "use client";
 import { ArrowUpWideNarrow } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-
+import { AnimatePresence, motion } from "framer-motion";
 const BackToTop = () => {
   const [show, setShow] = useState(false);
 
@@ -27,16 +27,23 @@ const BackToTop = () => {
   }, [handleScroll]);
 
   return (
-    <div className="fixed bottom-10 right-4 z-40">
+    <AnimatePresence>
       {show && (
-        <button
-          onClick={scrollToTop}
-          className="shadow-lg shadow-purple-950 p-2 bg-gradient-to-r from-purple-950 to-black rounded-xl"
+        <motion.div
+          className="fixed bottom-10 right-4 z-40"
+          initial={{ opacity: 0, right: -10 }}
+          animate={{ opacity: 1, right: 16 }}
+          exit={{ opacity: 0, right: -10 }}
         >
-          <ArrowUpWideNarrow size={20} />
-        </button>
+          <button
+            onClick={scrollToTop}
+            className="shadow-lg shadow-purple-950 p-2 bg-gradient-to-r from-purple-950 to-black rounded-xl"
+          >
+            <ArrowUpWideNarrow size={20} />
+          </button>
+        </motion.div>
       )}
-    </div>
+    </AnimatePresence>
   );
 };
 

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Nav } from "./Nav";
+import { motion } from "framer-motion";
 
 const NavLinks = [
   {
@@ -21,7 +22,12 @@ export const Header = () => {
     }
   };
   return (
-    <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
+    <motion.header
+      className="absolute top-0 w-full z-10 h-24 flex items-center justify-center"
+      initial={{ top: -100 }}
+      animate={{ top: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className=" flex justify-between items-center containers">
         <Link href="/">
           <h1 className="md:text-xl text-sm flex items-center">
@@ -42,6 +48,6 @@ export const Header = () => {
           </button>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };

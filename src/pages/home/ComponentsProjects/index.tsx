@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import { ProjectsCards } from "./projectSection";
 import { TitleSection } from "@/components/Title/title";
 import { Horizontal } from "@/components/divider/Horizontal";

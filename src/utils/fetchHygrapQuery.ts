@@ -1,4 +1,9 @@
-export const fetchHygrapQuery = async (query: string, revalidate?: number) => {
+// src/utils/fetchHygrapQuery.ts
+
+export const fetchHygrapQuery = async <T>(
+  query: string,
+  revalidate?: number
+): Promise<T> => {
   try {
     const response = await fetch(process.env.HYGRAPH_URL!, {
       method: "POST",
@@ -7,22 +12,23 @@ export const fetchHygrapQuery = async (query: string, revalidate?: number) => {
         Accept: "application/json",
         Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
       },
-      body: JSON.stringify({ query }),
       next: {
         revalidate,
       },
+      body: JSON.stringify({ query }),
     });
 
     const result = await response.json();
-    console.log("Fetch response:", result);
+    console.log("GraphQL Result:", result);
 
     if (result.errors) {
       console.error("GraphQL Errors:", result.errors);
+      throw new Error("GraphQL Errors occurred");
     }
 
-    return result.data; // Check if `data` is correctly returned
+    return result.data;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Erro ao fazer a consulta GraphQL:", error);
     throw error;
   }
 };

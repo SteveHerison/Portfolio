@@ -5,6 +5,8 @@ import { TitleSection } from "../Title/title";
 import { Button } from "../ui/button";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import { fadeUpAnimation } from "@/lib/animations";
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
@@ -34,9 +36,10 @@ export const Form = () => {
           title="Vamos trabalhar juntos? Entre em contato!"
           className="items-center text-center"
         />
-        <form
+        <motion.form
           className="mt-12 w-full flex h-full flex-col gap-4"
           onSubmit={handleSubmit(onSubmit)}
+          {...fadeUpAnimation}
         >
           <input
             type="text"
@@ -59,7 +62,7 @@ export const Form = () => {
           <Button className="shadow-xl font-primary bg-purple-950 shadow-purple-950/80 transition-all hover:shadow-zinc-800">
             Enviar
           </Button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

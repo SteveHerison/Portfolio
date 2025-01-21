@@ -1,7 +1,8 @@
+"use client";
 import { Link } from "@/components/Link";
 import { TitleSection } from "@/components/Title/title";
 import { ArrowBigLeftDash } from "lucide-react";
-
+import { motion } from "framer-motion";
 const PageIntroduction = () => {
   return (
     <section className="w-full h-[560px] lg:h-[700px] flex flex-col items-center justify-center bg-heroImage bg-no-repeat bg-cover bg-right-bottom">
@@ -10,13 +11,20 @@ const PageIntroduction = () => {
         title="Projetos"
         className="text-center [&>h3]:text-4xl [&>h3]:font-semibold [&>span]:bg-clip-text [&>span]:text-transparent [&>span]:bg-gradient-to-r from-purple-400 to-purple-950"
       />
-      <div className="flex flex-col items-center">
+      <motion.div
+        className="flex flex-col items-center"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.6 }}
+      >
         <p className="text-center my-6 text-sm sm:text-base max-w-[640px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ut?
-          Distinctio ad quisquam labore repudiandae. Dolor in illo excepturi
-          ad!Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-          ut? Distinctio ad quisquam labore repudiandae. Dolor in illo excepturi
-          ad!
+          Aqui você encontrará uma seleção dos meus projetos, desenvolvidos.
+          Navegue e explore todas as tecnologias usadas. Cada projeto reflete
+          minha experiência em design, programação e resolução de problemas.
+          Explore para ver como aplico minhas habilidades para criar soluções
+          práticas e criativas. Fique à vontade para navegar pelos detalhes e
+          conferir os desafios que enfrentei em cada um.
         </p>
         <Link
           href="/"
@@ -25,7 +33,7 @@ const PageIntroduction = () => {
           <ArrowBigLeftDash />
           voltar para home
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };
