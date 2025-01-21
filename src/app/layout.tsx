@@ -6,8 +6,8 @@ import { Form } from "@/components/FormContact";
 import { Footer } from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 
-export const geistFira = Fira_Code({
-  variable: "--font-geist-fira",
+// Configurando a fonte diretamente com o Fira_Code do Next.js
+const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="pt-Br">
       <body
-        className={`min-h-screen flex flex-col ${geistFira.variable} font-primary text-zinc-300`}
+        className={`${firaCode} min-h-screen flex flex-col font-primary text-zinc-300`}
       >
         <BackToTop />
         <Header />

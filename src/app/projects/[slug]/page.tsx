@@ -1,8 +1,10 @@
 import ProjectDatails from "@/pages/Projects/projectDatals";
 import ProjectSection from "@/pages/Projects/projectDatals/projectSection";
 import { ProjectPageData, ProjectsPageStaticData } from "@/types/pageInfo";
-import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery";
+import { fetchHygrapQuery } from "@/utils/fetchHygrapQuery"; // Corrigido aqui
+
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type ProjectProps = {
   params: {
@@ -10,6 +12,7 @@ type ProjectProps = {
   };
 };
 
+// Função para buscar detalhes do projeto
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
     query ProjectQuery {
@@ -40,12 +43,22 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
       }
     }
   `;
+  // Certifique-se de que está chamando o nome correto da função
+  const data = fetchHygrapQuery<ProjectPageData>(
+    query,
+    1000 * 60 * 60 * 24 // 1 dia
+  );
 
-  return fetchHygrapQuery(query, 1000 * 60 * 60 * 24); // 1 day
+  return data;
 };
 
+// Restante do código continua o mesmo
+
+// Componente da página do projeto
 export default async function Project({ params: { slug } }: ProjectProps) {
   const { project } = await getProjectDetails(slug);
+
+  if (!project?.title) return notFound();
 
   return (
     <>
@@ -55,6 +68,7 @@ export default async function Project({ params: { slug } }: ProjectProps) {
   );
 }
 
+// Gerar os parâmetros estáticos para as páginas
 export async function generateStaticParams() {
   const query = `
     query ProjectsSlugsQuery() {
@@ -63,30 +77,14 @@ export async function generateStaticParams() {
       }
     }
   `;
+  const { projects } = await fetchHygrapQuery<ProjectsPageStaticData>(query);
 
-  try {
-    const response = await fetchHygrapQuery<ProjectsPageStaticData>(query);
-
-    if (!response.projects || !Array.isArray(response.projects)) {
-      console.error("Dados de projetos inválidos ou ausentes");
-      return [];
-    }
-
-    return response.projects.map((project) => ({
-      slug: project.slug,
-    }));
-  } catch (error) {
-    console.error("Erro ao buscar slugs de projetos:", error);
-    return []; // Retorna um array vazio em caso de erro
-  }
+  return projects;
 }
 
 export async function generateMetadata({
-  params,
+  params: { slug },
 }: ProjectProps): Promise<Metadata> {
-  // Aguardar a obtenção de `slug`
-  const { slug } = params;
-
   const data = await getProjectDetails(slug);
   const project = data.project;
 
@@ -101,9 +99,6 @@ export async function generateMetadata({
           height: 630,
         },
       ],
-    },
-    icons: {
-      icon: "/src/app/favicon.svg",
     },
   };
 }

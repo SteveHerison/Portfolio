@@ -87,3 +87,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+:root {
+  --font-geist-fira: "Fira Code", sans-serif;
+}
+
+/* Aplicando a fonte globalmente */
+body {
+  font-family: var(--font-geist-fira);
+}
+
+/* Definir a fonte para elementos específicos, se necessário */
+.font-fira {
+  font-family: "Fira Code", sans-serif;
+}

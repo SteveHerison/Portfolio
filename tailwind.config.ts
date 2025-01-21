@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ["Fira Code", "sans-serif"],
+      },
+
       backgroundImage: {
         heroImage: "url('/assets/img/Backhero.png')",
       },
@@ -63,9 +67,7 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
-      fontFamily: {
-        primary: "var(--font-geist-fira)",
-      },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
